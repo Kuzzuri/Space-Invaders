@@ -9,15 +9,11 @@ background = pygame.image.load("background.jpg")
 player = pygame.image.load("spaceship.png")
 alien = pygame.image.load("alien.png")
 laser = pygame.image.load("laser.png")
-def alien_location():
-    kobe = randint(0, 800)
-    print(kobe, type(kobe))
-    return kobe
 playerX = 375
 playerX_move = 0
 bulletY_move = 0
 bulletY = 490
-alienX = alien_location()
+alienX = randint(0, 800)
 alienY = 0
 alienX_move = 5
 fired = False
@@ -72,7 +68,7 @@ while True:
     distance = sqrt(pow((alienX - bulletX), 2) + pow((alienY - bulletY), 2))
     edistance = sqrt(pow((alienX - playerX), 2) + pow((alienY - 480), 2))
     if distance < 27:
-        alienX = alien_location()
+        alienX = randint(0, 800)
         alienY = 0
     if edistance < 50:
         print("nanayı yemedin mi")
