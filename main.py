@@ -71,8 +71,12 @@ while True:
         fired = False
     if playerX > 756:
         playerX_move = 0
+        if event.key == pygame.K_LEFT:
+                playerX_move = -5
     elif playerX < 0:
         playerX_move = 0
+        if event.key == pygame.K_RIGHT:
+            playerX_move = 5
 
     screen.blit(background, (0, 0))
     if fired == False:
